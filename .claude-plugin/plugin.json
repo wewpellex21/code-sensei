@@ -10,12 +10,21 @@
   "repository": "https://github.com/DojoCodingLabs/code-sensei",
   "license": "MIT",
   "keywords": [
-    "learning",
+    "claude-code",
+    "claude-code-plugin",
+    "claude",
+    "anthropic",
+    "claude-code-hooks",
+    "claude-code-commands",
+    "claude-skills",
+    "ai-mentor",
     "education",
+    "learning",
     "vibecoding",
     "beginner",
     "tutorial",
     "gamification",
+    "code-learning",
     "code-sensei",
     "dojo-coding"
   ]

@@ -1,8 +1,13 @@
-# 🥋 CodeSensei
+# 🥋 CodeSensei — Claude Code Plugin for Learning to Code
 
-### Learn to code while you vibecode — by [Dojo Coding](https://dojocoding.io)
+[![Claude Code Plugin](https://img.shields.io/badge/Claude_Code-Plugin-blue?logo=anthropic&logoColor=white)](https://github.com/DojoCodingLabs/code-sensei)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Category: Education](https://img.shields.io/badge/Category-Education-orange)](https://github.com/topics/claude-code-plugin)
+[![Free & Open Source](https://img.shields.io/badge/Free-Open_Source-brightgreen)](https://github.com/DojoCodingLabs/code-sensei)
 
-**CodeSensei** is a free, open-source Claude Code plugin that teaches you programming while you build. Like Duolingo, but for coding — and instead of fake exercises, you learn from **your own projects** in real-time.
+### A free, open-source Claude Code plugin that teaches programming while you vibecode — by [Dojo Coding](https://dojocoding.io)
+
+**CodeSensei** is a **Claude Code plugin** that turns every coding session into a learning session. Like Duolingo, but for coding — and instead of fake exercises, you learn from **your own projects** in real-time.
 
 No prior coding experience needed. Seriously.
 

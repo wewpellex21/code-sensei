@@ -20,12 +20,21 @@
       "homepage": "https://dojocoding.io/code-sensei",
       "category": "education",
       "keywords": [
-        "learning",
+        "claude-code",
+        "claude-code-plugin",
+        "claude",
+        "anthropic",
+        "claude-code-hooks",
+        "claude-code-commands",
+        "claude-skills",
+        "ai-mentor",
         "education",
+        "learning",
         "vibecoding",
         "beginner",
         "tutorial",
-        "gamification"
+        "gamification",
+        "code-learning"
       ]
     }
   ]
