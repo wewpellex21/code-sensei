@@ -6,7 +6,9 @@
 
 No prior coding experience needed. Seriously.
 
-<!-- TODO: Add demo GIF here → real vibecoding session → CodeSensei explains → quiz → XP → belt promotion -->
+<p align="center">
+  <img src="codesenseicover.png" alt="CodeSensei — Learn to code while you vibecode" />
+</p>
 
 ---
 
