@@ -64,14 +64,23 @@ if command -v jq &> /dev/null; then
     fi
   fi
 
-  # Proactive micro-lesson: inject teaching context when a NEW concept is encountered
-  if [ "$IS_FIRST_EVER" = "true" ] && [ -f "$PROFILE_FILE" ]; then
-    BELT=$(jq -r '.belt // "white"' "$PROFILE_FILE")
-    # Sanitize command for JSON (remove quotes and special chars)
-    SAFE_CMD=$(echo "$COMMAND" | head -c 80 | tr '"' "'" | tr '\\' '/')
+  # Always inject teaching context after commands
+  BELT=$(jq -r '.belt // "white"' "$PROFILE_FILE" 2>/dev/null || echo "white")
+  # Sanitize command for JSON (remove quotes and special chars)
+  SAFE_CMD=$(echo "$COMMAND" | head -c 80 | tr '"' "'" | tr '\\' '/')
+
+  if [ "$IS_FIRST_EVER" = "true" ] && [ -n "$CONCEPT" ]; then
+    # First-time encounter: micro-lesson about the concept
     CONTEXT="🥋 CodeSensei micro-lesson trigger: The user just encountered '$CONCEPT' for the FIRST TIME (command: $SAFE_CMD). Their belt level is '$BELT'. Provide a brief 2-sentence explanation of what $CONCEPT means and why it matters. Adapt language to their belt level. Keep it concise and non-intrusive."
-    echo "{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"$CONTEXT\"}}"
+  elif [ -n "$CONCEPT" ]; then
+    # Already-seen concept: brief inline insight about this specific command
+    CONTEXT="🥋 CodeSensei inline insight: Claude just ran a '$CONCEPT' command ($SAFE_CMD). The user's belt level is '$BELT'. Provide a brief 1-sentence explanation of what this command does, adapted to their belt level. Keep it natural and non-intrusive."
+  else
+    # Unknown command type: still provide a brief hint
+    CONTEXT="🥋 CodeSensei inline insight: Claude just ran a shell command ($SAFE_CMD). The user's belt level is '$BELT'. If this command is educational, briefly explain what it does in 1 sentence. If trivial, skip the explanation."
   fi
+
+  echo "{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"$CONTEXT\"}}"
 fi
 
 exit 0

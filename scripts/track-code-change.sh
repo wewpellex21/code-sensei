@@ -62,13 +62,18 @@ if command -v jq &> /dev/null; then
     fi
   fi
 
-  # Proactive micro-lesson: inject teaching context when a NEW technology is encountered
-  if [ "$IS_FIRST_EVER" = "true" ] && [ -f "$PROFILE_FILE" ]; then
-    BELT=$(jq -r '.belt // "white"' "$PROFILE_FILE")
+  # Always inject teaching context after code changes
+  BELT=$(jq -r '.belt // "white"' "$PROFILE_FILE" 2>/dev/null || echo "white")
+
+  if [ "$IS_FIRST_EVER" = "true" ]; then
+    # First-time encounter: micro-lesson about the technology
     CONTEXT="🥋 CodeSensei micro-lesson trigger: The user just encountered '$TECH' for the FIRST TIME (file: $FILE_PATH). Their belt level is '$BELT'. Provide a brief 2-sentence explanation of what $TECH is and why it matters for their project. Adapt language to their belt level. Keep it concise and non-intrusive — weave it naturally into your response, don't stop everything for a lecture."
-    # Output structured JSON so Claude sees the teaching trigger via additionalContext
-    echo "{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"$CONTEXT\"}}"
+  else
+    # Already-seen technology: inline insight about the specific change
+    CONTEXT="🥋 CodeSensei inline insight: Claude just used '$TOOL_NAME' on '$FILE_PATH' ($TECH). The user's belt level is '$BELT'. Provide a brief 1-2 sentence explanation of what this change does and why, adapted to their belt level. Keep it natural and non-intrusive — weave it into your response as a quick teaching moment."
   fi
+
+  echo "{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"$CONTEXT\"}}"
 fi
 
 exit 0

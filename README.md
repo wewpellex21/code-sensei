@@ -73,6 +73,18 @@ That's it. Start building — CodeSensei activates automatically.
 
 > **Requires:** [Claude Code](https://code.claude.com) with plugin support. Hook scripts use `jq` for profile tracking — install with `brew install jq` (macOS) or `apt install jq` (Linux).
 
+### Updating
+
+```bash
+# Update the marketplace catalog first:
+claude plugin marketplace update DojoCodingLabs/code-sensei
+
+# Then update the plugin:
+claude plugin update code-sensei@code-sensei
+```
+
+Restart your Claude Code session after updating — hooks are loaded at session start.
+
 ### Local Development
 
 ```bash

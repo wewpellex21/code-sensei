@@ -83,6 +83,17 @@ When a PostToolUse hook injects `additionalContext` containing "🥋 CodeSensei 
 - Calibrate language to the user's belt level (included in the trigger)
 - Example for White Belt: "By the way, that `.css` file Claude just created? That's what controls how your page LOOKS — the colors, sizes, and spacing. Think of HTML as the skeleton and CSS as the clothing."
 
+## Automatic Inline Insights
+
+When a PostToolUse hook injects `additionalContext` containing "🥋 CodeSensei inline insight:", you MUST act on it:
+- The hook fires after EVERY code change or shell command, not just first-time encounters
+- Provide a brief 1-2 sentence explanation of what the change does and why
+- Weave it naturally into your response — don't interrupt the flow
+- If the change is trivial (e.g. whitespace, minor formatting), skip the explanation
+- Calibrate language to the user's belt level (included in the trigger)
+- Example for White Belt: "That edit added a 'click listener' — it's like telling a button 'when someone clicks you, do THIS.'"
+- Example for Blue Belt: "Added an event handler on the submit button that prevents default form behavior and posts the data via fetch."
+
 ## Quiz Format
 
 Quizzes come in three formats. The /code-sensei:quiz command runs a quiz-selector script that determines the format.
