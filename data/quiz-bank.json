@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "description": "CodeSensei quiz bank — contextual questions organized by concept. The sensei agent also generates dynamic quizzes based on the user's actual code.",
+  "version": "2.0.0",
+  "description": "CodeSensei quiz bank — contextual questions organized by concept. Supports multiple choice, free-response, and code-prediction formats. The quiz-selector.sh script reads this bank for spaced repetition and hybrid quiz selection.",
   "quizzes": {
     "variables": [
       {
@@ -144,6 +144,78 @@
         "correct": 1,
         "explanation": "Authentication = 'Are you who you say you are?' (login with email/password). Authorization = 'Are you allowed to do this?' (can this user delete posts? can they access admin?). A bouncer checks your ID (authentication), then checks the VIP list (authorization).",
         "hint": "Think about entering a secure building: first they check your identity, then they check your access level."
+      }
+    ],
+    "javascript": [
+      {
+        "belt": "yellow",
+        "question": "Why does Claude add `console.log()` statements when debugging?",
+        "options": ["It makes the code run faster", "It prints messages so you can see what the code is doing at that point", "It's required by JavaScript"],
+        "correct": 1,
+        "explanation": "`console.log()` is like putting a spy camera in your code. It shows you what a variable contains or whether a certain part of the code even runs. It's the simplest debugging tool!",
+        "hint": "Think about leaving notes for yourself to track what's happening."
+      },
+      {
+        "belt": "orange",
+        "format": "free_response",
+        "question": "In your own words, what is the difference between `let` and `const` in JavaScript, and when would you use each one?",
+        "expected_understanding": "let is for values that change, const is for values that stay the same. Use const by default, let when you know the value will need to change.",
+        "hint": "Think about what 'constant' means in everyday language."
+      }
+    ],
+    "react": [
+      {
+        "belt": "orange",
+        "format": "free_response",
+        "question": "In your own words, why does React use components instead of putting everything in one big file?",
+        "expected_understanding": "Components are reusable building blocks. They make code organized, maintainable, and reusable. Each component handles one piece of the UI.",
+        "hint": "Think about LEGO blocks vs. carving a statue from one piece of stone."
+      }
+    ],
+    "typescript": [
+      {
+        "belt": "orange",
+        "question": "Why does TypeScript add types to JavaScript?",
+        "options": ["To make the code run faster", "To catch bugs before the code runs by checking that data is the right shape", "Because browsers require types"],
+        "correct": 1,
+        "explanation": "TypeScript is like a spell-checker for your code. It catches mistakes (like passing a number where a string is expected) BEFORE you run the program. Browsers don't actually run TypeScript — it gets converted to regular JavaScript.",
+        "hint": "Think about what a spell-checker does for your writing."
+      }
+    ],
+    "python": [
+      {
+        "belt": "white",
+        "question": "What makes Python different from many other programming languages in how code is organized?",
+        "options": ["It uses colors to separate code blocks", "It uses indentation (spaces) to show which code belongs together", "It requires semicolons at the end of every line"],
+        "correct": 1,
+        "explanation": "Python uses indentation (spaces at the start of lines) to show code structure. Other languages use curly braces {} for this. If your Python code isn't indented correctly, it won't work!",
+        "hint": "Look at how the lines of code are spaced from the left edge."
+      }
+    ],
+    "testing": [
+      {
+        "belt": "green",
+        "question": "Why do developers write automated tests even though they could just click through the app manually?",
+        "options": ["Tests make the app run faster", "Tests automatically check that everything still works after every change", "Tests are required by all programming languages"],
+        "correct": 1,
+        "explanation": "Imagine checking 100 features by hand every time you change one line of code. Tests do this automatically in seconds. They catch bugs that humans would miss and give you confidence to make changes without breaking things.",
+        "hint": "Think about what happens when a project has hundreds of features and you change something."
+      },
+      {
+        "belt": "green",
+        "format": "free_response",
+        "question": "Explain the difference between a unit test and an integration test. When would you use each?",
+        "expected_understanding": "Unit tests check one small piece in isolation (a single function). Integration tests check that multiple pieces work together correctly (e.g., API endpoint hitting a database).",
+        "hint": "Think about testing a car engine by itself vs. testing the whole car on a road."
+      }
+    ],
+    "docker": [
+      {
+        "belt": "blue",
+        "format": "free_response",
+        "question": "In your own words, what problem does Docker solve? Why not just run the app directly?",
+        "expected_understanding": "Docker packages an app with all its dependencies so it runs the same everywhere. Solves 'works on my machine' problems by creating consistent environments.",
+        "hint": "Think about shipping a complete kitchen vs. just a recipe."
       }
     ]
   }

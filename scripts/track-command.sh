@@ -48,6 +48,7 @@ if command -v jq &> /dev/null; then
   echo "{\"timestamp\":\"$TIMESTAMP\",\"command\":\"$(echo "$COMMAND" | head -c 200)\",\"concept\":\"$CONCEPT\"}" >> "$COMMANDS_LOG"
 
   # Track concept in session and lifetime if new and meaningful
+  IS_FIRST_EVER="false"
   if [ -n "$CONCEPT" ] && [ -f "$PROFILE_FILE" ]; then
     ALREADY_SEEN=$(jq --arg c "$CONCEPT" '.session_concepts | index($c)' "$PROFILE_FILE")
     if [ "$ALREADY_SEEN" = "null" ]; then
@@ -59,7 +60,17 @@ if command -v jq &> /dev/null; then
     if [ "$LIFETIME_SEEN" = "null" ]; then
       UPDATED=$(jq --arg c "$CONCEPT" '.concepts_seen += [$c]' "$PROFILE_FILE")
       echo "$UPDATED" > "$PROFILE_FILE"
+      IS_FIRST_EVER="true"
     fi
+  fi
+
+  # Proactive micro-lesson: inject teaching context when a NEW concept is encountered
+  if [ "$IS_FIRST_EVER" = "true" ] && [ -f "$PROFILE_FILE" ]; then
+    BELT=$(jq -r '.belt // "white"' "$PROFILE_FILE")
+    # Sanitize command for JSON (remove quotes and special chars)
+    SAFE_CMD=$(echo "$COMMAND" | head -c 80 | tr '"' "'" | tr '\\' '/')
+    CONTEXT="🥋 CodeSensei micro-lesson trigger: The user just encountered '$CONCEPT' for the FIRST TIME (command: $SAFE_CMD). Their belt level is '$BELT'. Provide a brief 2-sentence explanation of what $CONCEPT means and why it matters. Adapt language to their belt level. Keep it concise and non-intrusive."
+    echo "{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"$CONTEXT\"}}"
   fi
 fi
 

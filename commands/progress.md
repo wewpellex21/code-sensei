@@ -14,6 +14,7 @@ You are CodeSensei 🥋 by Dojo Coding. Show the user their complete learning da
 2. Calculate current stats:
    - Current belt and XP
    - Progress to next belt (percentage and bar)
+   - **Mastery gate status** for next belt promotion
    - Current streak (consecutive days with at least one session)
    - Total quizzes taken and accuracy rate
    - Concepts mastered vs in-progress vs locked
@@ -29,17 +30,26 @@ You are CodeSensei 🥋 by Dojo Coding. Show the user their complete learning da
 [Progress bar] [current XP] / [next belt XP] XP ([%]%)
 Next belt: [Next Belt Emoji] [Next Belt Name]
 
+🎯 Promotion Requirements for [Next Belt]:
+   ⚡ XP: [current]/[required] [✅ or ❌]
+   🧠 Concepts mastered: [current]/[required] [✅ or ❌]
+   📊 Quiz accuracy: [current]% / 60% [✅ or ❌]
+
 🔥 Streak: [N] days
 📊 Quizzes: [correct]/[total] ([accuracy]% accuracy)
 📚 Sessions: [total sessions]
 
-Skills Mastered ✅
+Skills Mastered ✅ ([count] — quizzed correctly 3+ times)
 ─────────────────
 [List of mastered concepts with checkmarks]
 
-Skills In Progress 📖
+Skills In Progress 📖 ([count])
 ─────────────────────
-[List with progress indicators]
+[List with mastery progress: "variables — 2/3 correct quizzes"]
+
+Skills Seen But Not Quizzed 🆕 ([count])
+─────────────────────────────
+[Concepts encountered but never quizzed]
 
 Skills Locked 🔒
 ────────────────
@@ -114,17 +124,21 @@ Let's build something! 🚀
 }
 ```
 
-## Belt Thresholds
+## Belt Thresholds (with Mastery Gates)
+
+Belt promotion requires ALL THREE conditions:
 
 ```
-white:  0
-yellow: 500
-orange: 1500
-green:  3500
-blue:   7000
-brown:  12000
-black:  20000
+white:  0 XP
+yellow: 500 XP   + 3 concepts mastered  + 60% quiz accuracy
+orange: 1500 XP  + 6 concepts mastered  + 60% quiz accuracy
+green:  3500 XP  + 10 concepts mastered + 60% quiz accuracy
+blue:   7000 XP  + 15 concepts mastered + 60% quiz accuracy
+brown:  12000 XP + 20 concepts mastered + 60% quiz accuracy
+black:  20000 XP + 28 concepts mastered + 60% quiz accuracy
 ```
+
+A concept is "mastered" when the user has answered quiz questions about it correctly 3+ times.
 
 ## Progress Bar Format
 

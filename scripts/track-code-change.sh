@@ -45,6 +45,7 @@ if command -v jq &> /dev/null; then
   echo "{\"timestamp\":\"$TIMESTAMP\",\"tool\":\"$TOOL_NAME\",\"file\":\"$FILE_PATH\",\"extension\":\"$EXTENSION\",\"tech\":\"$TECH\"}" >> "$CHANGES_LOG"
 
   # Track technology in session concepts if it's new
+  IS_FIRST_EVER="false"
   if [ -f "$PROFILE_FILE" ] && [ "$TECH" != "other" ]; then
     ALREADY_SEEN=$(jq --arg tech "$TECH" '.session_concepts | index($tech)' "$PROFILE_FILE")
     if [ "$ALREADY_SEEN" = "null" ]; then
@@ -52,12 +53,21 @@ if command -v jq &> /dev/null; then
       echo "$UPDATED" > "$PROFILE_FILE"
     fi
 
-    # Also add to lifetime concepts_seen if new
+    # Also add to lifetime concepts_seen if new — and flag for micro-lesson
     LIFETIME_SEEN=$(jq --arg tech "$TECH" '.concepts_seen | index($tech)' "$PROFILE_FILE")
     if [ "$LIFETIME_SEEN" = "null" ]; then
       UPDATED=$(jq --arg tech "$TECH" '.concepts_seen += [$tech]' "$PROFILE_FILE")
       echo "$UPDATED" > "$PROFILE_FILE"
+      IS_FIRST_EVER="true"
     fi
+  fi
+
+  # Proactive micro-lesson: inject teaching context when a NEW technology is encountered
+  if [ "$IS_FIRST_EVER" = "true" ] && [ -f "$PROFILE_FILE" ]; then
+    BELT=$(jq -r '.belt // "white"' "$PROFILE_FILE")
+    CONTEXT="🥋 CodeSensei micro-lesson trigger: The user just encountered '$TECH' for the FIRST TIME (file: $FILE_PATH). Their belt level is '$BELT'. Provide a brief 2-sentence explanation of what $TECH is and why it matters for their project. Adapt language to their belt level. Keep it concise and non-intrusive — weave it naturally into your response, don't stop everything for a lecture."
+    # Output structured JSON so Claude sees the teaching trigger via additionalContext
+    echo "{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"$CONTEXT\"}}"
   fi
 fi
 
