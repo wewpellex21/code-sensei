@@ -1,0 +1,344 @@
+{
+  "version": "1.0.0",
+  "description": "CodeSensei skill tree — defines all learnable concepts, prerequisites, and mastery criteria",
+  "categories": {
+    "fundamentals": {
+      "name": "Programming Fundamentals",
+      "icon": "🧱",
+      "belt_requirement": "white",
+      "concepts": {
+        "variables": {
+          "name": "Variables",
+          "xp_to_master": 50,
+          "prerequisites": [],
+          "description": "Storing and naming data",
+          "triggers": ["let", "const", "var", "="]
+        },
+        "data-types": {
+          "name": "Data Types",
+          "xp_to_master": 50,
+          "prerequisites": ["variables"],
+          "description": "Strings, numbers, booleans, arrays, objects",
+          "triggers": ["string", "number", "boolean", "true", "false", "null"]
+        },
+        "conditionals": {
+          "name": "Conditionals",
+          "xp_to_master": 75,
+          "prerequisites": ["variables", "data-types"],
+          "description": "If/else logic and decision-making",
+          "triggers": ["if", "else", "switch", "ternary", "?"]
+        },
+        "functions": {
+          "name": "Functions",
+          "xp_to_master": 100,
+          "prerequisites": ["variables"],
+          "description": "Reusable blocks of code",
+          "triggers": ["function", "=>", "return", "const.*=.*=>"]
+        },
+        "loops": {
+          "name": "Loops",
+          "xp_to_master": 75,
+          "prerequisites": ["variables", "conditionals"],
+          "description": "Repeating actions",
+          "triggers": ["for", "while", "forEach", "map", ".map("]
+        },
+        "arrays": {
+          "name": "Arrays",
+          "xp_to_master": 75,
+          "prerequisites": ["variables", "data-types"],
+          "description": "Ordered lists of data",
+          "triggers": ["[]", "push", "pop", "filter", "map", "reduce"]
+        },
+        "objects": {
+          "name": "Objects",
+          "xp_to_master": 75,
+          "prerequisites": ["variables", "data-types"],
+          "description": "Structured data with named properties",
+          "triggers": ["{}", "key:", "value", "property"]
+        }
+      }
+    },
+    "web-basics": {
+      "name": "Web Basics",
+      "icon": "🌐",
+      "belt_requirement": "white",
+      "concepts": {
+        "html": {
+          "name": "HTML",
+          "xp_to_master": 75,
+          "prerequisites": [],
+          "description": "Page structure and content",
+          "triggers": [".html", "<div>", "<h1>", "<p>", "<form>"]
+        },
+        "css": {
+          "name": "CSS",
+          "xp_to_master": 75,
+          "prerequisites": ["html"],
+          "description": "Styling and visual design",
+          "triggers": [".css", "color:", "font-size:", "display:", "margin:", "padding:"]
+        },
+        "how-browsers-work": {
+          "name": "How Browsers Work",
+          "xp_to_master": 50,
+          "prerequisites": ["html"],
+          "description": "Request-response cycle and rendering",
+          "triggers": ["localhost", "http://", "https://"]
+        }
+      }
+    },
+    "javascript": {
+      "name": "JavaScript",
+      "icon": "⚡",
+      "belt_requirement": "yellow",
+      "concepts": {
+        "js-basics": {
+          "name": "JavaScript Basics",
+          "xp_to_master": 100,
+          "prerequisites": ["fundamentals.variables", "fundamentals.functions"],
+          "description": "JS syntax and core features",
+          "triggers": [".js", ".mjs", "console.log"]
+        },
+        "async-await": {
+          "name": "Async/Await",
+          "xp_to_master": 150,
+          "prerequisites": ["js-basics", "fundamentals.functions"],
+          "description": "Handling asynchronous operations",
+          "triggers": ["async", "await", "Promise", ".then("]
+        },
+        "imports-exports": {
+          "name": "Imports & Exports",
+          "xp_to_master": 75,
+          "prerequisites": ["js-basics"],
+          "description": "Code organization across files",
+          "triggers": ["import", "export", "require(", "module.exports"]
+        },
+        "json": {
+          "name": "JSON",
+          "xp_to_master": 50,
+          "prerequisites": ["fundamentals.objects"],
+          "description": "Data format for communication",
+          "triggers": [".json", "JSON.parse", "JSON.stringify"]
+        },
+        "dom-manipulation": {
+          "name": "DOM Manipulation",
+          "xp_to_master": 100,
+          "prerequisites": ["html", "js-basics"],
+          "description": "Changing the page with JavaScript",
+          "triggers": ["document.", "getElementById", "querySelector", "addEventListener"]
+        }
+      }
+    },
+    "terminal": {
+      "name": "Terminal & Tools",
+      "icon": "💻",
+      "belt_requirement": "yellow",
+      "concepts": {
+        "terminal-navigation": {
+          "name": "Terminal Navigation",
+          "xp_to_master": 50,
+          "prerequisites": [],
+          "description": "Moving around in the command line",
+          "triggers": ["cd ", "ls", "pwd", "mkdir"]
+        },
+        "package-management": {
+          "name": "Package Management",
+          "xp_to_master": 100,
+          "prerequisites": ["terminal-navigation"],
+          "description": "Installing and managing dependencies",
+          "triggers": ["npm install", "npm i ", "yarn add", "pip install", "package.json"]
+        },
+        "git": {
+          "name": "Git Version Control",
+          "xp_to_master": 150,
+          "prerequisites": ["terminal-navigation"],
+          "description": "Tracking code changes",
+          "triggers": ["git add", "git commit", "git push", "git pull", ".git"]
+        },
+        "environment-variables": {
+          "name": "Environment Variables",
+          "xp_to_master": 75,
+          "prerequisites": ["terminal-navigation"],
+          "description": "Managing secrets and configuration",
+          "triggers": [".env", "process.env", "dotenv"]
+        }
+      }
+    },
+    "frontend": {
+      "name": "Frontend Frameworks",
+      "icon": "🎨",
+      "belt_requirement": "orange",
+      "concepts": {
+        "react-components": {
+          "name": "React Components",
+          "xp_to_master": 150,
+          "prerequisites": ["js-basics", "html"],
+          "description": "Building reusable UI pieces",
+          "triggers": [".jsx", ".tsx", "React", "export default function"]
+        },
+        "props": {
+          "name": "Props",
+          "xp_to_master": 100,
+          "prerequisites": ["react-components"],
+          "description": "Passing data to components",
+          "triggers": ["props", "{ children }", "interface.*Props"]
+        },
+        "state": {
+          "name": "State Management",
+          "xp_to_master": 150,
+          "prerequisites": ["react-components"],
+          "description": "Component memory and reactivity",
+          "triggers": ["useState", "setState", "useReducer"]
+        },
+        "effects": {
+          "name": "Effects & Lifecycle",
+          "xp_to_master": 150,
+          "prerequisites": ["state", "async-await"],
+          "description": "Side effects and data fetching",
+          "triggers": ["useEffect", "useCallback", "useMemo"]
+        },
+        "routing": {
+          "name": "Client Routing",
+          "xp_to_master": 100,
+          "prerequisites": ["react-components"],
+          "description": "Navigation between pages",
+          "triggers": ["react-router", "next/router", "next/link", "useRouter"]
+        }
+      }
+    },
+    "backend": {
+      "name": "Backend Development",
+      "icon": "⚙️",
+      "belt_requirement": "green",
+      "concepts": {
+        "servers": {
+          "name": "Servers",
+          "xp_to_master": 150,
+          "prerequisites": ["js-basics", "how-browsers-work"],
+          "description": "Handling requests and responses",
+          "triggers": ["express", "fastify", "app.listen", "server.js"]
+        },
+        "routes": {
+          "name": "API Routes",
+          "xp_to_master": 100,
+          "prerequisites": ["servers"],
+          "description": "Defining endpoints",
+          "triggers": ["app.get", "app.post", "router.", "api/"]
+        },
+        "middleware": {
+          "name": "Middleware",
+          "xp_to_master": 100,
+          "prerequisites": ["routes"],
+          "description": "Request processing pipeline",
+          "triggers": ["app.use(", "middleware", "next()"]
+        },
+        "authentication": {
+          "name": "Authentication",
+          "xp_to_master": 200,
+          "prerequisites": ["routes", "environment-variables"],
+          "description": "User login and security",
+          "triggers": ["jwt", "session", "bcrypt", "passport", "auth"]
+        },
+        "rest-api": {
+          "name": "REST APIs",
+          "xp_to_master": 150,
+          "prerequisites": ["routes", "json"],
+          "description": "Designing and consuming APIs",
+          "triggers": ["GET", "POST", "PUT", "DELETE", "fetch(", "axios"]
+        }
+      }
+    },
+    "databases": {
+      "name": "Databases",
+      "icon": "🗄️",
+      "belt_requirement": "green",
+      "concepts": {
+        "sql-basics": {
+          "name": "SQL Basics",
+          "xp_to_master": 150,
+          "prerequisites": ["fundamentals.objects"],
+          "description": "Querying and managing data",
+          "triggers": ["SELECT", "INSERT", "UPDATE", "DELETE", ".sql"]
+        },
+        "database-schema": {
+          "name": "Database Schema",
+          "xp_to_master": 100,
+          "prerequisites": ["sql-basics"],
+          "description": "Designing data structures",
+          "triggers": ["CREATE TABLE", "schema.prisma", "migration"]
+        },
+        "orm": {
+          "name": "ORMs",
+          "xp_to_master": 150,
+          "prerequisites": ["sql-basics", "js-basics"],
+          "description": "Database access from code",
+          "triggers": ["prisma", "sequelize", "drizzle", "typeorm", "knex"]
+        },
+        "relationships": {
+          "name": "Data Relationships",
+          "xp_to_master": 150,
+          "prerequisites": ["database-schema"],
+          "description": "Connecting tables and data models",
+          "triggers": ["FOREIGN KEY", "JOIN", "hasMany", "belongsTo", "@relation"]
+        }
+      }
+    },
+    "deployment": {
+      "name": "Deployment",
+      "icon": "🚀",
+      "belt_requirement": "blue",
+      "concepts": {
+        "hosting": {
+          "name": "Hosting & Deployment",
+          "xp_to_master": 150,
+          "prerequisites": ["servers"],
+          "description": "Making your app available to the world",
+          "triggers": ["vercel", "netlify", "railway", "render", "deploy"]
+        },
+        "docker": {
+          "name": "Docker",
+          "xp_to_master": 200,
+          "prerequisites": ["hosting", "terminal-navigation"],
+          "description": "Containerized applications",
+          "triggers": ["Dockerfile", "docker-compose", "docker build"]
+        },
+        "ci-cd": {
+          "name": "CI/CD",
+          "xp_to_master": 200,
+          "prerequisites": ["git", "hosting"],
+          "description": "Automated testing and deployment",
+          "triggers": [".github/workflows", "github actions", "pipeline"]
+        }
+      }
+    },
+    "architecture": {
+      "name": "Architecture",
+      "icon": "🏗️",
+      "belt_requirement": "blue",
+      "concepts": {
+        "client-server": {
+          "name": "Client-Server Architecture",
+          "xp_to_master": 100,
+          "prerequisites": ["react-components", "servers"],
+          "description": "How frontend and backend work together",
+          "triggers": []
+        },
+        "design-patterns": {
+          "name": "Design Patterns",
+          "xp_to_master": 200,
+          "prerequisites": ["client-server"],
+          "description": "Common solutions to common problems",
+          "triggers": ["singleton", "factory", "observer", "MVC"]
+        },
+        "scalability": {
+          "name": "Scalability",
+          "xp_to_master": 200,
+          "prerequisites": ["design-patterns", "hosting"],
+          "description": "Building for growth",
+          "triggers": ["cache", "redis", "CDN", "load balancer"]
+        }
+      }
+    }
+  },
+  "total_concepts": 42,
+  "mastery_quiz_threshold": 3
+}

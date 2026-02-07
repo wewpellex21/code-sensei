@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (if any tooling is added later)
+node_modules/
+package-lock.json
+
+# User profile data (this lives at ~/.code-sensei/, never in the repo)
+profile.json
+sessions.log
+session-changes.jsonl
+session-commands.jsonl

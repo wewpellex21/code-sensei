@@ -1,0 +1,150 @@
+{
+  "version": "1.0.0",
+  "description": "CodeSensei quiz bank — contextual questions organized by concept. The sensei agent also generates dynamic quizzes based on the user's actual code.",
+  "quizzes": {
+    "variables": [
+      {
+        "belt": "white",
+        "question": "If you write `let score = 10` and then `score = 25`, what is `score` now?",
+        "options": ["10", "25", "35"],
+        "correct": 1,
+        "explanation": "Variables can change! When you write `score = 25`, the old value (10) gets replaced with the new one (25). That's why it's called a 'variable' — it varies.",
+        "hint": "Think of a variable like a whiteboard — you can erase what's there and write something new."
+      },
+      {
+        "belt": "white",
+        "question": "What does `const` mean when declaring a variable?",
+        "options": ["The value can change anytime", "The value stays the same — it's constant", "The variable is deleted after use"],
+        "correct": 1,
+        "explanation": "`const` is short for 'constant' — once you set the value, it can't be changed. Use it when you know the value shouldn't change, like a user's ID.",
+        "hint": "The word 'const' is short for something that means 'unchanging.'"
+      }
+    ],
+    "html": [
+      {
+        "belt": "white",
+        "question": "What does HTML define on a webpage?",
+        "options": ["The colors and fonts", "The structure and content", "The animations and interactions"],
+        "correct": 1,
+        "explanation": "HTML defines WHAT is on the page — headings, paragraphs, images, buttons. It's the skeleton. CSS handles how it looks, and JavaScript handles what it does.",
+        "hint": "Think of building a house. One thing defines where the walls and rooms go..."
+      },
+      {
+        "belt": "yellow",
+        "question": "If you want to add a clickable link to another website, which HTML tag would you use?",
+        "options": ["<link>", "<a>", "<button>"],
+        "correct": 1,
+        "explanation": "The `<a>` tag (short for 'anchor') creates hyperlinks. You write `<a href=\"https://example.com\">Click me</a>`. The `<link>` tag is actually for connecting CSS files, not for clickable links!",
+        "hint": "It's one of the shortest HTML tags — just one letter."
+      }
+    ],
+    "css": [
+      {
+        "belt": "white",
+        "question": "If the text on your page is too small, which file would you change?",
+        "options": ["The HTML file", "The CSS file", "The JavaScript file"],
+        "correct": 1,
+        "explanation": "CSS controls how things LOOK — size, color, spacing, fonts. The HTML file defines what's on the page, but CSS styles it. You'd change `font-size` in your CSS.",
+        "hint": "Think about what controls the visual appearance vs the content itself."
+      }
+    ],
+    "functions": [
+      {
+        "belt": "yellow",
+        "question": "Why do developers put code inside functions instead of writing everything in one long file?",
+        "options": ["It makes the code run faster", "So they can reuse the same code without copying it", "Functions are required by the programming language"],
+        "correct": 1,
+        "explanation": "Functions are reusable recipes! Write it once, use it many times. If you need to calculate a total in 10 different places, you write one function and call it 10 times instead of copying the same code.",
+        "hint": "Think about why a chef writes down a recipe instead of memorizing every step every time."
+      }
+    ],
+    "async-await": [
+      {
+        "belt": "orange",
+        "question": "Why does Claude use `await` before some function calls but not others?",
+        "options": ["It makes the code run faster", "The function takes time (like loading data from a server) and we need to wait for the result", "It's just a coding style preference"],
+        "correct": 1,
+        "explanation": "Some operations are instant (like math: 2+2) and some take time (like asking a server for data). `await` tells the program: 'pause here and wait for this to finish before moving on.' Without it, you'd try to use data that hasn't arrived yet!",
+        "hint": "Think about ordering food at a restaurant. Some things you need to wait for..."
+      }
+    ],
+    "react-components": [
+      {
+        "belt": "orange",
+        "question": "Claude just created a `<UserCard />` component. How many times can this be used on the page?",
+        "options": ["Only once — each component is unique", "As many times as you want, each with different data", "Twice at most"],
+        "correct": 1,
+        "explanation": "Components are reusable building blocks! You can use `<UserCard />` once for each user — 5 users? 5 cards. 100 users? 100 cards. Same component, different data (passed through props).",
+        "hint": "Think of components like a cookie cutter — one shape, as many cookies as you want."
+      },
+      {
+        "belt": "green",
+        "question": "When Claude uses `useState` inside a component, what is it doing?",
+        "options": ["Saving data permanently to a database", "Giving the component its own memory that triggers re-renders when changed", "Creating a global variable accessible everywhere"],
+        "correct": 1,
+        "explanation": "useState creates LOCAL memory for that specific component. When the state changes, React automatically re-draws that component with the new data. It's not permanent (refreshing the page resets it) and it's not global (other components can't see it directly).",
+        "hint": "Think of it as the component's personal notebook — only it can read and write to it."
+      }
+    ],
+    "routes": [
+      {
+        "belt": "green",
+        "question": "If someone fills out a signup form on your website, which HTTP method sends their data to the server?",
+        "options": ["GET — because we're 'getting' their info", "POST — because we're sending new data to be saved", "DELETE — because we're removing the empty form"],
+        "correct": 1,
+        "explanation": "POST is for SENDING new data to the server. Think of it like mailing a letter (POSTing it). GET is for requesting/reading data. The names match the action: GET retrieves, POST submits, DELETE removes.",
+        "hint": "The name of this method is also a word for sending mail."
+      }
+    ],
+    "sql-basics": [
+      {
+        "belt": "green",
+        "question": "Which SQL keyword would you use to find all users who signed up today?",
+        "options": ["INSERT — to add them to results", "SELECT — to retrieve matching data", "UPDATE — to refresh the data"],
+        "correct": 1,
+        "explanation": "SELECT is the SQL word for 'show me data that matches my criteria.' You'd write something like `SELECT * FROM users WHERE signup_date = today`. INSERT is for adding NEW data, UPDATE is for changing EXISTING data.",
+        "hint": "You want to 'pick out' or 'choose' certain rows from the database."
+      }
+    ],
+    "git": [
+      {
+        "belt": "yellow",
+        "question": "Claude just ran `git commit -m 'Add login page'`. What did that do?",
+        "options": ["Uploaded the code to GitHub", "Saved a snapshot of the current code with a description", "Deleted the old version of the code"],
+        "correct": 1,
+        "explanation": "A commit is like a save point in a video game. It captures the current state of ALL your code with a message describing what changed. But it's only saved LOCALLY — you need `git push` to upload it to GitHub.",
+        "hint": "Think of it as taking a photo of your work at this moment, with a caption."
+      }
+    ],
+    "environment-variables": [
+      {
+        "belt": "yellow",
+        "question": "Why does Claude put API keys in a .env file instead of directly in the code?",
+        "options": ["It makes the code run faster", "So the secret keys aren't visible if someone reads the code or if it's on GitHub", "The programming language requires it"],
+        "correct": 1,
+        "explanation": "If you put passwords or API keys directly in your code and push it to GitHub, anyone can see them! The .env file keeps secrets separate and is added to .gitignore so it never gets uploaded. It's like keeping your house key in your pocket, not taped to the front door.",
+        "hint": "Think about where you'd keep a password — somewhere public or somewhere private?"
+      }
+    ],
+    "package-management": [
+      {
+        "belt": "yellow",
+        "question": "Claude just ran `npm install express`. What happened?",
+        "options": ["It created a new project called Express", "It downloaded the Express library so your project can use it", "It started the Express server"],
+        "correct": 1,
+        "explanation": "npm install downloads code that other developers wrote and shared. Express is a popular library for building web servers. After installing, your project can use it with `import express from 'express'`. Think of it like downloading an app from an app store.",
+        "hint": "The word 'install' gives it away — you're adding something new to your project."
+      }
+    ],
+    "authentication": [
+      {
+        "belt": "blue",
+        "question": "What's the difference between authentication and authorization?",
+        "options": ["They're the same thing — both check passwords", "Authentication verifies WHO you are, authorization checks WHAT you're allowed to do", "Authentication is for admins, authorization is for regular users"],
+        "correct": 1,
+        "explanation": "Authentication = 'Are you who you say you are?' (login with email/password). Authorization = 'Are you allowed to do this?' (can this user delete posts? can they access admin?). A bouncer checks your ID (authentication), then checks the VIP list (authorization).",
+        "hint": "Think about entering a secure building: first they check your identity, then they check your access level."
+      }
+    ]
+  }
+}
